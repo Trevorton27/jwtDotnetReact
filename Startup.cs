@@ -1,3 +1,4 @@
+using JWTReact.Auth;
 using JWTReact.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -31,6 +32,7 @@ namespace JWTReact
             options.UseNpgsql(Configuration.GetConnectionString("DefaultConnectionString")));
             services.AddControllers();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<JwtService>();
 
         }
 
